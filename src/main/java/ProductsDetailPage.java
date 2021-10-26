@@ -63,19 +63,21 @@ public class ProductsDetailPage extends BasePage {
             return false;
     }
 
-    public boolean compareNumber(int i) throws InterruptedException {
+    public boolean compareNumber() throws InterruptedException {
         Thread.sleep(2000);
         find(increareseNumber).sendKeys(Keys.ARROW_DOWN);
         Thread.sleep(2000);
         find(increareseNumber).sendKeys(Keys.ENTER);
-        if (isElementPresent(increareseNumber))
-            return false;
-        else
+        Thread.sleep(2000);
+        if ((isElementPresent(increareseNumber).getFirstSelectedOption().getText().replace(" ", "")).contains("2"))
             return true;
+        else
+            return false;
 
     }
 
     public boolean isDeleteProduct() throws InterruptedException {
+        Thread.sleep(3000);
         find(deleteProductLocator).click();
         Thread.sleep(3000);
         if (find(emptyCart).isDisplayed())

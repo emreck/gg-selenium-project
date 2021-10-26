@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Test_Product extends BaseTest {
 
-    HomePage homePage; //anasayfa element
+    HomePage homePage;
     ProductPage productPage;
     ProductsDetailPage productsDetailPage;
 
@@ -18,7 +18,7 @@ public class Test_Product extends BaseTest {
         homePage.acceptCookies();
         productPage = new ProductPage(driver);
 
-        homePage.searchArea().search("bilgisayar"); //productSearch
+        homePage.searchArea().search("bilgisayar");
         Assertions.assertTrue(productPage.isOnProductPage(), "Not on product page");
     }
 
@@ -40,7 +40,7 @@ public class Test_Product extends BaseTest {
     public void compare_product_number() throws IOException, InterruptedException {
 
        productsDetailPage = new ProductsDetailPage(driver);      ;
-       Assertions.assertTrue(productsDetailPage.compareNumber(2),
+       Assertions.assertTrue(productsDetailPage.compareNumber(),
                "Number is not equal");
 
     }
