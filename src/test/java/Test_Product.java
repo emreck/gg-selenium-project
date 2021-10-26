@@ -50,7 +50,7 @@ public class Test_Product extends BaseTest {
 
        productsDetailPage = new ProductsDetailPage(driver);
        Assertions.assertTrue(productsDetailPage.isDeleteProduct(),
-                "Nor on product page");
+                "Product not removed");
     }
 
 

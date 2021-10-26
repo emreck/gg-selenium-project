@@ -10,7 +10,6 @@ public class HomePage extends BasePage {
 
 
     SearchArea searchArea;
-
     By cookiesAcceptLocator = By.xpath("//*[text()[contains(.,'Kapat')]]");
 
     public HomePage(WebDriver driver) {
@@ -23,18 +22,9 @@ public class HomePage extends BasePage {
         return this.searchArea;
     }
 
-    public void gotoCart() {
-
-
-
-    }
-
-    public void goPage() {
-
-    }
 
     public void acceptCookies() {
-        if (isDisplayed(cookiesAcceptLocator)){
+        if (isDisplayed(cookiesAcceptLocator)) {
             click(cookiesAcceptLocator);
         }
     }

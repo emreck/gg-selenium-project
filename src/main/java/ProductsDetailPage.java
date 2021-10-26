@@ -1,9 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 
 import java.io.*;
 
@@ -72,9 +69,9 @@ public class ProductsDetailPage extends BasePage {
         Thread.sleep(2000);
         find(increareseNumber).sendKeys(Keys.ENTER);
         if (isElementPresent(increareseNumber))
-        return false;
+            return false;
         else
-           return true;
+            return true;
 
     }
 
@@ -82,34 +79,9 @@ public class ProductsDetailPage extends BasePage {
         find(deleteProductLocator).click();
         Thread.sleep(3000);
         if (find(emptyCart).isDisplayed())
-        return true;
+            return true;
         else
             return false;
     }
 
-
-
-/*    public String getProductPriceInFile() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        try {
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
-
-            while (line != null) {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
-            }
-            String everything = sb.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            br.close();
-        }
-
-    }*/
-
-   /* public boolean isOnProductDetailPage() {
-
-    }*/
 }
